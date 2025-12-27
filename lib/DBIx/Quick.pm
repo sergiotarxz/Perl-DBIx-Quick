@@ -15,7 +15,7 @@ my %FIELDS;
 my %FIXED;
 my %PRIMARY_KEYS;
 
-our $VERSION = "0.3";
+our $VERSION = "0.4";
 
 sub import {
     my $caller          = caller;
@@ -374,24 +374,24 @@ And elsewhere:
 
 =head1 DESCRIPTION
 
-C<DBIx::Quick> is the needed bridge between Moo and your database, you create DAO objects in a similar fashion to Moo and those objects auto-create
-the corresponding instances under the same package plus ::Instance, importing this module becomes your package into a Moo class and the created
-class is also a Moo one.
+L<DBIx::Quick> is the needed bridge between L<Moo> and your database, you create DAO objects in a similar fashion to L<Moo> and those objects auto-create
+the corresponding instances under the same package plus ::Instance, importing this module becomes your package into a L<Moo> class and the created
+class is also a L<Moo> one.
 
 Many times writing object to relational database mapping you find yourself having to repeat the same information once and once again which becomes
 tiring for the developer, Models and DAO are created in a single step in a single file to prevent this, but they remain completely separate classes,
 methods are provided to take full advantage of the separation.
 
-The Moo syntax also provides shorter code overall.
+The L<Moo> syntax also provides shorter code overall.
 
 This module is preliminar, meaning the syntax is probably not the definitive one, if you are a programmer who wants to spend less effort into
 making full blown applications feel free to join the development with suggestions or patches.
 
-If you are needing too fancy autocomplete or templates just to be productive maybe you instead need C<DBIx::Quick>.
+If you are needing too fancy autocomplete or templates just to be productive maybe you instead need L<DBIx::Quick>.
 
 =head1 DAO DECLARATIONS
 
-While declaring a DBIx::Quick mapping you can use the following subs autoimported into your package namespace.
+While declaring a L<DBIx::Quick> mapping you can use the following subs autoimported into your package namespace.
 
 =head2 table
 
@@ -406,7 +406,7 @@ Specify the table this DAO maps to.
  field tax => (is => 'ro');
  field id_user => (is => 'ro', required => 1, search => 1, fk => ['MyApp::DAO::Users', 'id', 'users', 'transactions']);
 
-field is the equivalent to C<Moo> C<has> sub implementing all its options (useful or not) to represent a column into the table.
+field is the equivalent to L<Moo> C<has> sub implementing all its options (useful or not) to represent a column into the table.
 
 It provides the following extra options:
 
@@ -451,11 +451,11 @@ Declares a subroutine to be added to the generated ::Instance Object.
 	return $redis;
  };
 
-Makes a Moo attribute available to the ::Instance Object with the same syntax than Moo has.
+Makes a L<Moo> attribute available to the ::Instance Object with the same syntax than L<Moo> has.
 
 =head2 dbh
 
-You must declare a dbh method or a Moo attribute returning a DBI connection.
+You must declare a dbh method or a L<Moo> attribute returning a DBI connection.
 
 =head1 DAO METHODS
 
@@ -467,7 +467,7 @@ You must declare a dbh method or a Moo attribute returning a DBI connection.
  	tax  =>	21,
  )}
 
-Searchs ::Instance Objects in the table using SQL::Abstract::More where syntax but replacing the column names by field names.
+Searchs ::Instance Objects in the table using L<SQL::Abstract::More> where syntax but replacing the column names by field names.
 
 =head2 free_search
 
@@ -480,7 +480,7 @@ Searchs ::Instance Objects in the table using SQL::Abstract::More where syntax b
  	},
  )};
 
-Searchs ::Instance Objects in the table using all the syntax of SQL::Abstract::More select, columns are the real columns not fields.
+Searchs ::Instance Objects in the table using all the syntax of L<SQL::Abstract::More> select, columns are the real columns not fields.
 
 -columns and -from are not allowed to be used. -from should be substituted by -join and -columns is not needed.
 
