@@ -15,7 +15,7 @@ my %FIELDS;
 my %FIXED;
 my %PRIMARY_KEYS;
 
-our $VERSION = "0.1";
+our $VERSION = "0.2";
 
 sub import {
     my $caller          = caller;
@@ -505,6 +505,20 @@ meaningful return. Searches the object to update by the primary key.
  $dao->delete($user);
 
 Vanishes the instance of the database. Searches by the primary key.
+
+=head1 INSTANCE SUBS
+
+=head2 fetch_again
+
+ $user = $user->fetch_again;
+
+Get remote updates the ::Instance object may have.
+
+=head2 dbh
+
+ $user->dbh($dbh);
+
+Sets a database to be used in the constructor of the corresponding DAO while doing fetch_again.
 
 =head1 BUGS AND LIMITATIONS
 

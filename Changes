@@ -1,2 +1,4 @@
-0.0.1 Sat Dec 27 03:46:13 PM CET 2025
+0.1 Sat Dec 27 03:46:13 PM CET 2025
     - Initial version
+0.2 Sat Dec 27 04:50:34 PM CET 2025
+    - Documenting fetch_again and dbh in instance.
