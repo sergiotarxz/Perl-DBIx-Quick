@@ -1,0 +1,53 @@
+{
+   "abstract" : "DBIx::Fast - Object Relational Mapping for the lazy programmer",
+   "author" : [
+      "Sergio Iglesias <sergioxz@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Module::Build version 0.4234",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : 2
+   },
+   "name" : "DBIx-Fast",
+   "prereqs" : {
+      "runtime" : {
+         "requires" : {
+            "Import::Into" : 0,
+            "Moo" : 0,
+            "SQL::Abstract::More" : 0,
+            "perl" : "v5.16.3"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::Exception" : 0,
+            "Test::MockObject" : 0,
+            "Test::More" : 0
+         }
+      }
+   },
+   "provides" : {
+      "DBIx::Fast" : {
+         "file" : "lib/DBIx/Fast.pm",
+         "version" : "0.1"
+      },
+      "DBIx::Fast::Role" : {
+         "file" : "lib/DBIx/Fast/Role.pm"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/sergiotarxz/Perl-DBIx-Fast/issues"
+      },
+      "repository" : {
+         "url" : "https://github.com/sergiotarxz/Perl-DBIx-Fast"
+      }
+   },
+   "version" : "0.1",
+   "x_serialization_backend" : "JSON::PP version 4.16"
+}
