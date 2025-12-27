@@ -2,11 +2,11 @@
 use Module::Build;
 
 my $build = Module::Build->new(
-    module_name   => 'DBIx::Fast',
+    module_name   => 'DBIx::Quick',
     license       => 'perl_5',
     dist_author   => 'Sergio Iglesias <sergioxz@cpan.org>',
     dist_abstract =>
-      'DBIx::Fast - Object Relational Mapping for the lazy programmer',
+      'DBIx::Quick - Object Relational Mapping for the lazy programmer',
     requires => {
         'perl'                => '5.16.3',
         'Moo'                 => 0,
@@ -21,9 +21,9 @@ my $build = Module::Build->new(
     meta_merge => {
         resources => {
             bugtracker =>
-              'https://github.com/sergiotarxz/Perl-DBIx-Fast/issues',
+              'https://github.com/sergiotarxz/Perl-DBIx-Quick/issues',
             repository =>
-              'https://github.com/sergiotarxz/Perl-DBIx-Fast',
+              'https://github.com/sergiotarxz/Perl-DBIx-Quick',
         }
     },
 );

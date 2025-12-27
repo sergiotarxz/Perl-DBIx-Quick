@@ -1,5 +1,5 @@
 ---
-abstract: 'DBIx::Fast - Object Relational Mapping for the lazy programmer'
+abstract: 'DBIx::Quick - Object Relational Mapping for the lazy programmer'
 author:
   - 'Sergio Iglesias <sergioxz@cpan.org>'
 build_requires:
@@ -12,20 +12,20 @@ license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
-name: DBIx-Fast
+name: DBIx-Quick
 provides:
-  DBIx::Fast:
-    file: lib/DBIx/Fast.pm
+  DBIx::Quick:
+    file: lib/DBIx/Quick.pm
     version: '0.1'
-  DBIx::Fast::Role:
-    file: lib/DBIx/Fast/Role.pm
+  DBIx::Quick::Role:
+    file: lib/DBIx/Quick/Role.pm
 requires:
   Import::Into: '0'
   Moo: '0'
   SQL::Abstract::More: '0'
   perl: v5.16.3
 resources:
-  bugtracker: https://github.com/sergiotarxz/Perl-DBIx-Fast/issues
-  repository: https://github.com/sergiotarxz/Perl-DBIx-Fast
+  bugtracker: https://github.com/sergiotarxz/Perl-DBIx-Quick/issues
+  repository: https://github.com/sergiotarxz/Perl-DBIx-Quick
 version: '0.1'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.020'

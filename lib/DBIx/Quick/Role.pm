@@ -1,4 +1,4 @@
-package DBIx::Fast::Role;
+package DBIx::Quick::Role;
 
 use v5.16.3;
 use strict;

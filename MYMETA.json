@@ -1,5 +1,5 @@
 {
-   "abstract" : "DBIx::Fast - Object Relational Mapping for the lazy programmer",
+   "abstract" : "DBIx::Quick - Object Relational Mapping for the lazy programmer",
    "author" : [
       "Sergio Iglesias <sergioxz@cpan.org>"
    ],
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : 2
    },
-   "name" : "DBIx-Fast",
+   "name" : "DBIx-Quick",
    "prereqs" : {
       "runtime" : {
          "requires" : {
@@ -31,21 +31,21 @@
       }
    },
    "provides" : {
-      "DBIx::Fast" : {
-         "file" : "lib/DBIx/Fast.pm",
+      "DBIx::Quick" : {
+         "file" : "lib/DBIx/Quick.pm",
          "version" : "0.1"
       },
-      "DBIx::Fast::Role" : {
-         "file" : "lib/DBIx/Fast/Role.pm"
+      "DBIx::Quick::Role" : {
+         "file" : "lib/DBIx/Quick/Role.pm"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/sergiotarxz/Perl-DBIx-Fast/issues"
+         "web" : "https://github.com/sergiotarxz/Perl-DBIx-Quick/issues"
       },
       "repository" : {
-         "url" : "https://github.com/sergiotarxz/Perl-DBIx-Fast"
+         "url" : "https://github.com/sergiotarxz/Perl-DBIx-Quick"
       }
    },
    "version" : "0.1",

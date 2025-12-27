@@ -38,13 +38,13 @@ use Data::Dumper;
 		}
 		return [@return];
 	});
-	package DBIx::Fast::Test::Users {
+	package DBIx::Quick::Test::Users {
 		use v5.16.3;
 
 		use strict;
 		use warnings;
 
-		use DBIx::Fast;
+		use DBIx::Quick;
 
 		sub dbh {
 			return $dbh;
@@ -55,7 +55,7 @@ use Data::Dumper;
 		field id => (is => 'ro', search => 1, pk => 1);
 		field user_name => (is => 'rw', required => 1, search => 1, column => 'username');
 		field surname => (is => 'rw');
-		field id_address => (is => 'rw', required => 1, fk => ['DBIx::Fast::Test::Addresses', 'id', 'addresses'], search => 1);
+		field id_address => (is => 'rw', required => 1, fk => ['DBIx::Quick::Test::Addresses', 'id', 'addresses'], search => 1);
 		instance_has shouting_surname => (is => 'lazy');
 		instance_sub _build_shouting_surname => sub {
 			my $self = shift;
@@ -64,13 +64,13 @@ use Data::Dumper;
 
 		fix;
 	}
-	package DBIx::Fast::Test::Addresses {
+	package DBIx::Quick::Test::Addresses {
 		use v5.16.3;
 
 		use strict;
 		use warnings;
 
-		use DBIx::Fast;
+		use DBIx::Quick;
 
 		sub dbh {
 			return $dbh;
@@ -84,31 +84,31 @@ use Data::Dumper;
 
 		fix;
 	}
-	ok(DBIx::Fast::Test::Users->can('new'), '->new implemented for the DAO');
-	ok(DBIx::Fast::Test::Users::Instance->can('new'), '->new implemented for the instance');
-	my $user = DBIx::Fast::Test::Users::Instance->new(user_name => 'User', surname => 'Luser', id_address => 3);
-	ok($user->isa('DBIx::Fast::Test::Users::Instance'), 'Users can be instanced successfully');
-	my $dao = DBIx::Fast::Test::Users->new;
-	ok($dao->isa('DBIx::Fast::Test::Users'), 'Users DAO can be instanced successfully');
+	ok(DBIx::Quick::Test::Users->can('new'), '->new implemented for the DAO');
+	ok(DBIx::Quick::Test::Users::Instance->can('new'), '->new implemented for the instance');
+	my $user = DBIx::Quick::Test::Users::Instance->new(user_name => 'User', surname => 'Luser', id_address => 3);
+	ok($user->isa('DBIx::Quick::Test::Users::Instance'), 'Users can be instanced successfully');
+	my $dao = DBIx::Quick::Test::Users->new;
+	ok($dao->isa('DBIx::Quick::Test::Users'), 'Users DAO can be instanced successfully');
 	$dao->insert($user);
 	ok($queries{'INSERT INTO users ( id_address, surname, username) VALUES ( ?, ?, ? )'}, 'Inserting a user is succesfully');
 	($user) = @{$dao->search(user_name => 'User')};
 	ok($queries{users_search_sql()}, 'Correct query sent to recover user');
-	ok($user->isa('DBIx::Fast::Test::Users::Instance'), 'Users can be recovered');
+	ok($user->isa('DBIx::Quick::Test::Users::Instance'), 'Users can be recovered');
 	is($user->id, 1, 'User id makes sense');
 	is($user->user_name, 'User', 'User username makes sense');
 	is($user->surname, 'Luser', 'User surname makes sense');
 	is($user->shouting_surname, 'LUSER', 'instance_sub and instance_has work fine');
 	$user = $user->fetch_again;
-	ok($user->isa('DBIx::Fast::Test::Users::Instance'), '(fetch_again) Users can be recovered');
+	ok($user->isa('DBIx::Quick::Test::Users::Instance'), '(fetch_again) Users can be recovered');
 	is($user->id, 1, '(fetch_again) User id makes sense');
 	is($user->user_name, 'User', '(fetch_again) User username makes sense');
 	is($user->surname, 'Luser', '(fetch_again) User surname makes sense');
 	is($user->shouting_surname, 'LUSER', '(fetch_again) instance_sub and instance_has work fine');
 	my ($address) = @{$user->addresses};
 	ok($queries{address_search_by_id()}, 'The address search by user query matches');
-	ok($address->isa('DBIx::Fast::Test::Addresses::Instance'), 'Address can be recovered by foreign key');
-	my @addresses = @{DBIx::Fast::Test::Addresses->new->free_search(
+	ok($address->isa('DBIx::Quick::Test::Addresses::Instance'), 'Address can be recovered by foreign key');
+	my @addresses = @{DBIx::Quick::Test::Addresses->new->free_search(
 		-join => [
 			'addresses.id=users.id_address', 'users',
 		],
@@ -122,7 +122,7 @@ use Data::Dumper;
 	is ($addresses[0]->city, 'Berlin', 'Can recover an address in free search');
 	is ($addresses[1]->city, 'Berlstedt', 'And two too');
 	dies_ok {
-		DBIx::Fast::Test::Users->search(
+		DBIx::Quick::Test::Users->search(
 			surname => 'García',
 		);
 	} 'Do not search by no searchable in normal search to prevent unwanted costly searches';
@@ -150,13 +150,13 @@ use Data::Dumper;
 		}
 		return [@return];
 	});
-	package DBIx::Fast::Test::Users2 {
+	package DBIx::Quick::Test::Users2 {
 		use v5.16.3;
 
 		use strict;
 		use warnings;
 
-		use DBIx::Fast;
+		use DBIx::Quick;
 
 		sub dbh {
 			return $dbh;
@@ -167,7 +167,7 @@ use Data::Dumper;
 		field id => (is => 'ro', search => 1, pk => 1);
 		field user_name => (is => 'rw', required => 1, search => 1, column => 'username');
 		field surname => (is => 'rw');
-		field id_address => (is => 'rw', required => 1, fk => ['DBIx::Fast::Test::Addresses2', 'id', 'addresses', 'users'], search => 1);
+		field id_address => (is => 'rw', required => 1, fk => ['DBIx::Quick::Test::Addresses2', 'id', 'addresses', 'users'], search => 1);
 		instance_has shouting_surname => (is => 'lazy');
 		instance_sub _build_shouting_surname => sub {
 			my $self = shift;
@@ -176,13 +176,13 @@ use Data::Dumper;
 
 		fix;
 	}
-	package DBIx::Fast::Test::Addresses2 {
+	package DBIx::Quick::Test::Addresses2 {
 		use v5.16.3;
 
 		use strict;
 		use warnings;
 
-		use DBIx::Fast;
+		use DBIx::Quick;
 
 		sub dbh {
 			return $dbh;
@@ -196,7 +196,7 @@ use Data::Dumper;
 
 		fix;
 	}
-	my ($pekin) = @{DBIx::Fast::Test::Addresses2->search(city => 'Pekin')};
+	my ($pekin) = @{DBIx::Quick::Test::Addresses2->search(city => 'Pekin')};
 	my ($juan, $paco) = @{$pekin->users};
 	is $juan->user_name, 'juanito', 'One user recovered by fk declared in another object';
 	is $paco->user_name, 'francisquito', 'Two users recovered by fk declared in another object';
