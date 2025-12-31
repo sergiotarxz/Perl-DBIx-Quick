@@ -27,16 +27,16 @@ perl -e '
     use v5.38.2;
     use Path::Tiny;
     say "Checking version in Changelog";
-    my ($version) = path("lib/DBIx/Fast.pm")->slurp_utf8 =~ /\$VERSION\s+=\s+"(.*?)"/;
+    my ($version) = path("lib/DBIx/Quick.pm")->slurp_utf8 =~ /\$VERSION\s+=\s+"(.*?)"/;
     say "version=$version";
     if (path("Changes")->slurp_utf8 !~ /$version/) {
         exit 1;
     }
     say "Version $version Present";
 ' || error
-pod2markdown < lib/DBIx/Fast.pm > README.md || error
+pod2markdown < lib/DBIx/Quick.pm > README.md || error
 # Not adding contribution instructions yet
-# pod2markdown < lib/DBIx/Fast/Contributing.pm > CONTRIBUTING.md || error
+# pod2markdown < lib/DBIx/Quick/Contributing.pm > CONTRIBUTING.md || error
 ./Build dist
 echo '#### TESTING NOT FINALIZED YET, QUALITY CONTROL NOW ####'
 
@@ -46,8 +46,8 @@ perl -MModule::CPANTS::Analyse -e '
     use Path::Tiny;
     use Data::Dumper;
 
-    my ($version) = path("lib/DBIx/Fast.pm")->slurp_utf8 =~ /\$VERSION\s+=\s+"(.*?)"/;
-    my $analyzer = Module::CPANTS::Analyse->new({ dist => "DBIx-Fast-$version.tar.gz" });
+    my ($version) = path("lib/DBIx/Quick.pm")->slurp_utf8 =~ /\$VERSION\s+=\s+"(.*?)"/;
+    my $analyzer = Module::CPANTS::Analyse->new({ dist => "DBIx-Quick-$version.tar.gz" });
     my $results = $analyzer->run->{kwalitee};
     my %failed_results;
     my $failed = 0;

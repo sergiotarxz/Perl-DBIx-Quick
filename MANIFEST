@@ -2,8 +2,8 @@
 Build.PL
 Changes
 check_before_version.sh
-lib/DBIx/Fast.pm
-lib/DBIx/Fast/Role.pm
+lib/DBIx/Quick.pm
+lib/DBIx/Quick/Role.pm
 LICENSE
 MANIFEST			This list of files
 META.json

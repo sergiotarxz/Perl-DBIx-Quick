@@ -1,4 +1,4 @@
-package DBIx::Fast;
+package DBIx::Quick;
 
 use v5.16.3;
 use strict;
@@ -41,7 +41,7 @@ sub import {
             die "A pk field is needed to fix $caller"
               if !$PRIMARY_KEYS{$caller};
             $caller_instance->can('has')->( dbh => ( is => 'ro' ) );
-            $caller->can('with')->('DBIx::Fast::Role');
+            $caller->can('with')->('DBIx::Quick::Role');
             {
                 *{"${caller_instance}::fetch_again"} = sub {
                     my ($self)     = @_;
@@ -340,7 +340,7 @@ sub _mark_searchable {
 
 =head1 NAME
 
-DBIx::Fast - Object Relational Mapping for the lazy programmer
+DBIx::Quick - Object Relational Mapping for the lazy programmer
 
 =head1 SYNOPSIS
 
@@ -349,7 +349,7 @@ DBIx::Fast - Object Relational Mapping for the lazy programmer
  use strict;
  use warnings;
  
- use DBIx::Fast;
+ use DBIx::Quick;
 
  table 'users';
 
@@ -374,7 +374,7 @@ And elsewhere:
 
 =head1 DESCRIPTION
 
-C<DBIx::Fast> is the needed bridge between Moo and your database, you create DAO objects in a similar fashion to Moo and those objects auto-create
+C<DBIx::Quick> is the needed bridge between Moo and your database, you create DAO objects in a similar fashion to Moo and those objects auto-create
 the corresponding instances under the same package plus ::Instance, importing this module becomes your package into a Moo class and the created
 class is also a Moo one.
 
@@ -387,11 +387,11 @@ The Moo syntax also provides shorter code overall.
 This module is preliminar, meaning the syntax is probably not the definitive one, if you are a programmer who wants to spend less effort into
 making full blown applications feel free to join the development with suggestions or patches.
 
-If you are needing too fancy autocomplete or templates just to be productive maybe you instead need C<DBIx::Fast>.
+If you are needing too fancy autocomplete or templates just to be productive maybe you instead need C<DBIx::Quick>.
 
 =head1 DAO DECLARATIONS
 
-While declaring a DBIx::Fast mapping you can use the following subs autoimported into your package namespace.
+While declaring a DBIx::Quick mapping you can use the following subs autoimported into your package namespace.
 
 =head2 table
 

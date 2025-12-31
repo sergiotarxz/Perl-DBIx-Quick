@@ -1,6 +1,6 @@
 # NAME
 
-DBIx::Fast - Object Relational Mapping for the lazy programmer
+DBIx::Quick - Object Relational Mapping for the lazy programmer
 
 # SYNOPSIS
 
@@ -9,7 +9,7 @@ DBIx::Fast - Object Relational Mapping for the lazy programmer
     use strict;
     use warnings;
     
-    use DBIx::Fast;
+    use DBIx::Quick;
 
     table 'users';
 
@@ -34,7 +34,7 @@ And elsewhere:
 
 # DESCRIPTION
 
-`DBIx::Fast` is the needed bridge between Moo and your database, you create DAO objects in a similar fashion to Moo and those objects auto-create
+`DBIx::Quick` is the needed bridge between Moo and your database, you create DAO objects in a similar fashion to Moo and those objects auto-create
 the corresponding instances under the same package plus ::Instance, importing this module becomes your package into a Moo class and the created
 class is also a Moo one.
 
@@ -47,11 +47,11 @@ The Moo syntax also provides shorter code overall.
 This module is preliminar, meaning the syntax is probably not the definitive one, if you are a programmer who wants to spend less effort into
 making full blown applications feel free to join the development with suggestions or patches.
 
-If you are needing too fancy autocomplete or templates just to be productive maybe you instead need `DBIx::Fast`.
+If you are needing too fancy autocomplete or templates just to be productive maybe you instead need `DBIx::Quick`.
 
 # DAO DECLARATIONS
 
-While declaring a DBIx::Fast mapping you can use the following subs autoimported into your package namespace.
+While declaring a DBIx::Quick mapping you can use the following subs autoimported into your package namespace.
 
 ## table
 
