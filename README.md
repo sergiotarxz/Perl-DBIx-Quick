@@ -166,6 +166,20 @@ meaningful return. Searches the object to update by the primary key.
 
 Vanishes the instance of the database. Searches by the primary key.
 
+# INSTANCE SUBS
+
+## fetch\_again
+
+    $user = $user->fetch_again;
+
+Get remote updates the ::Instance object may have.
+
+## dbh
+
+    $user->dbh($dbh);
+
+Sets a database to be used in the constructor of the corresponding DAO while doing fetch\_again.
+
 # BUGS AND LIMITATIONS
 
 Every DAO/Instance must be associated directly with a table, if you need something extra, the good old and reliable [SQL::Abstract::More](https://metacpan.org/pod/SQL%3A%3AAbstract%3A%3AMore) is 
