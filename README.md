@@ -34,24 +34,24 @@ And elsewhere:
 
 # DESCRIPTION
 
-`DBIx::Quick` is the needed bridge between Moo and your database, you create DAO objects in a similar fashion to Moo and those objects auto-create
-the corresponding instances under the same package plus ::Instance, importing this module becomes your package into a Moo class and the created
-class is also a Moo one.
+[DBIx::Quick](https://metacpan.org/pod/DBIx%3A%3AQuick) is the needed bridge between [Moo](https://metacpan.org/pod/Moo) and your database, you create DAO objects in a similar fashion to [Moo](https://metacpan.org/pod/Moo) and those objects auto-create
+the corresponding instances under the same package plus ::Instance, importing this module becomes your package into a [Moo](https://metacpan.org/pod/Moo) class and the created
+class is also a [Moo](https://metacpan.org/pod/Moo) one.
 
 Many times writing object to relational database mapping you find yourself having to repeat the same information once and once again which becomes
 tiring for the developer, Models and DAO are created in a single step in a single file to prevent this, but they remain completely separate classes,
 methods are provided to take full advantage of the separation.
 
-The Moo syntax also provides shorter code overall.
+The [Moo](https://metacpan.org/pod/Moo) syntax also provides shorter code overall.
 
 This module is preliminar, meaning the syntax is probably not the definitive one, if you are a programmer who wants to spend less effort into
 making full blown applications feel free to join the development with suggestions or patches.
 
-If you are needing too fancy autocomplete or templates just to be productive maybe you instead need `DBIx::Quick`.
+If you are needing too fancy autocomplete or templates just to be productive maybe you instead need [DBIx::Quick](https://metacpan.org/pod/DBIx%3A%3AQuick).
 
 # DAO DECLARATIONS
 
-While declaring a DBIx::Quick mapping you can use the following subs autoimported into your package namespace.
+While declaring a [DBIx::Quick](https://metacpan.org/pod/DBIx%3A%3AQuick) mapping you can use the following subs autoimported into your package namespace.
 
 ## table
 
@@ -66,7 +66,7 @@ Specify the table this DAO maps to.
     field tax => (is => 'ro');
     field id_user => (is => 'ro', required => 1, search => 1, fk => ['MyApp::DAO::Users', 'id', 'users', 'transactions']);
 
-field is the equivalent to `Moo` `has` sub implementing all its options (useful or not) to represent a column into the table.
+field is the equivalent to [Moo](https://metacpan.org/pod/Moo) `has` sub implementing all its options (useful or not) to represent a column into the table.
 
 It provides the following extra options:
 
@@ -111,11 +111,11 @@ Declares a subroutine to be added to the generated ::Instance Object.
            return $redis;
     };
 
-Makes a Moo attribute available to the ::Instance Object with the same syntax than Moo has.
+Makes a [Moo](https://metacpan.org/pod/Moo) attribute available to the ::Instance Object with the same syntax than [Moo](https://metacpan.org/pod/Moo) has.
 
 ## dbh
 
-You must declare a dbh method or a Moo attribute returning a DBI connection.
+You must declare a dbh method or a [Moo](https://metacpan.org/pod/Moo) attribute returning a DBI connection.
 
 # DAO METHODS
 
@@ -127,7 +127,7 @@ You must declare a dbh method or a Moo attribute returning a DBI connection.
            tax  => 21,
     )}
 
-Searchs ::Instance Objects in the table using SQL::Abstract::More where syntax but replacing the column names by field names.
+Searchs ::Instance Objects in the table using [SQL::Abstract::More](https://metacpan.org/pod/SQL%3A%3AAbstract%3A%3AMore) where syntax but replacing the column names by field names.
 
 ## free\_search
 
@@ -140,7 +140,7 @@ Searchs ::Instance Objects in the table using SQL::Abstract::More where syntax b
            },
     )};
 
-Searchs ::Instance Objects in the table using all the syntax of SQL::Abstract::More select, columns are the real columns not fields.
+Searchs ::Instance Objects in the table using all the syntax of [SQL::Abstract::More](https://metacpan.org/pod/SQL%3A%3AAbstract%3A%3AMore) select, columns are the real columns not fields.
 
 \-columns and -from are not allowed to be used. -from should be substituted by -join and -columns is not needed.
 
