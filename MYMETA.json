@@ -33,10 +33,10 @@
    "provides" : {
       "DBIx::Quick" : {
          "file" : "lib/DBIx/Quick.pm",
-         "version" : "0.6"
+         "version" : "0.7"
       },
-      "DBIx::Quick::Role" : {
-         "file" : "lib/DBIx/Quick/Role.pm"
+      "DBIx::Quick::Converter" : {
+         "file" : "lib/DBIx/Quick/Converter.pm"
       }
    },
    "release_status" : "stable",
@@ -48,6 +48,6 @@
          "url" : "https://github.com/sergiotarxz/Perl-DBIx-Quick"
       }
    },
-   "version" : "0.6",
+   "version" : "0.7",
    "x_serialization_backend" : "JSON::PP version 4.16"
 }
