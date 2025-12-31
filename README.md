@@ -136,7 +136,7 @@ Searchs ::Instance Objects in the table using SQL::Abstract::More where syntax b
                    'users.id=transactions.id_user users',
            ],
            -where => {
-                   'users.surname' => {-like => 'Gar%},
+                   'users.surname' => {-like => 'Gar%'},
            },
     )};
 
