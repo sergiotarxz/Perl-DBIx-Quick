@@ -19,6 +19,8 @@ provides:
     version: '0.7'
   DBIx::Quick::Converter:
     file: lib/DBIx/Quick/Converter.pm
+  DBIx::Quick::Role:
+    file: lib/DBIx/Quick/Role.pm
 requires:
   Import::Into: '0'
   Moo: '0'

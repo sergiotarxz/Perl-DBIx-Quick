@@ -37,6 +37,9 @@
       },
       "DBIx::Quick::Converter" : {
          "file" : "lib/DBIx/Quick/Converter.pm"
+      },
+      "DBIx::Quick::Role" : {
+         "file" : "lib/DBIx/Quick/Role.pm"
       }
    },
    "release_status" : "stable",
